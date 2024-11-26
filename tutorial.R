@@ -45,7 +45,7 @@ print(adj_matrix)
 edge_list <- as_data_frame(foodweb, what = "edges")
 print(edge_list)
 # 4 - incidence matrix ?
-#5 
+#5 -# visulise Network 
 network<- graph_from_adjacency_matrix(adj_matrix)
 network<- graph_from_data_frame(d = edge_list, directed = F)
 plot(network)
@@ -79,4 +79,50 @@ par(mfrow = c(1, 1))
 
 
 
-# visulise Network 
+
+
+### Analysis and Manipulation of graphs produced using igraph ----
+## Highlighting communities 
+
+
+
+
+## shortest path 
+
+
+
+
+## degree 
+deg <- degree(foodweb)
+print(deg)
+
+hist(deg, 
+     main = "Degree Distribution", 
+     xlab = "Degree", 
+     ylab = "Frequency", 
+     col = "skyblue", 
+     border = "black", 
+     breaks = 10)
+
+plot(foodweb, 
+     vertex.size = deg * 3,  # Adjust the size based on the degree
+     vertex.color = "lightblue", 
+     edge.color = "gray", 
+     vertex.label.color = "black", 
+     main = "Food Web with Degree Centrality (Vertex Size)")
+
+sorted_deg <- sort(deg, decreasing = TRUE)
+
+# Print the top 10 vertices with the highest degree centrality
+print(sorted_deg[1:10])
+
+normalized_deg <- deg / max(deg)
+
+# Print normalized degree centrality
+print(normalized_deg)
+
+
+degree_table <- data.frame(Vertex = names(deg), Degree = deg)
+
+# Print the degree table
+print(degree_table)
