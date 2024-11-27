@@ -1,0 +1,41 @@
+﻿Id,Species,Trophic Level,Community
+1,Algae,Producer,Aquatic
+2,Phytoplankton,Producer,Marine
+3,Grass,Producer,Terrestrial
+4,Shrubs,Producer,Terrestrial
+5,Trees,Producer,Terrestrial
+6,Zooplankton,Primary Consumer,Marine
+7,Copepod,Primary Consumer,Marine
+8,Insects,Primary Consumer,Terrestrial
+9,Rabbit,Primary Consumer,Terrestrial
+10,Mouse,Primary Consumer,Terrestrial
+11,Small Fish,Secondary Consumer,Marine
+12,Medium Fish,Secondary Consumer,Marine
+13,Large Fish,Top Predator,Marine
+14,Frog,Secondary Consumer,Freshwater
+15,Snake,Secondary Consumer,Terrestrial
+16,Eagle,Top Predator,Terrestrial
+17,Shark,Top Predator,Marine
+18,Bear,Omnivore,Terrestrial
+19,Wolf,Top Predator,Terrestrial
+20,Owl,Top Predator,Terrestrial
+21,Crab,Scavenger,Coastal
+22,Seagull,Top Predator,Coastal
+23,Catfish,Secondary Consumer,Freshwater
+24,Otter,Secondary Consumer,Freshwater
+25,Duckweed,Producer,Freshwater
+26,Tadpole,Primary Consumer,Freshwater
+27,Dragonfly Larvae,Secondary Consumer,Freshwater
+28,Water Beetle,Secondary Consumer,Freshwater
+29,Albatross,Top Predator,Marine
+30,Kelp,Producer,Marine
+31,Starfish,Secondary Consumer,Coastal
+32,Barnacle,Primary Consumer,Coastal
+33,Coral,Producer,Marine
+34,Jellyfish,Secondary Consumer,Marine
+35,Shrimp,Primary Consumer,Marine
+36,Lobster,Secondary Consumer,Coastal
+37,Wasp,Secondary Consumer,Terrestrial
+38,Grasshopper,Primary Consumer,Terrestrial
+39,Bacteria,Decomposer,All
+40,Fungus,Decomposer,All
