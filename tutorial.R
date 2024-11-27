@@ -83,13 +83,15 @@ par(mfrow = c(1, 1))
 
 ### Analysis and Manipulation of graphs produced using igraph ----
 ## Highlighting communities 
-
-
+comm <- cluster_edge_betweenness(foodweb)
+print(comm)
+comm_2 <- cluster_louvain(network)
+plot(comm_2, network)
 
 
 ## shortest path 
-
-
+shortest <- shortest_paths(g, from = 1)
+print(shortest$vpath[1:5])
 
 
 ## degree 
@@ -126,3 +128,57 @@ degree_table <- data.frame(Vertex = names(deg), Degree = deg)
 
 # Print the degree table
 print(degree_table)
+
+### Visualisation ----
+## Customising graphs 
+plot(foodweb)
+custom <- plot(foodweb,
+                vertex.size = 20,
+                vertex.color = "orange",
+                vertex.label.color = "black",
+                vertex.label.cex = 1.5,
+                edge.arrow.size = 0.5,
+                main = "Customisied graph",
+                layout = layout.circle(foodweb))
+
+# describe what these are 
+
+## Creating interactive graphs ( using visNetwork or plotly with igraph)
+install.packages("visNetwork")
+library(visNetwork)
+Edges_1 <- read.csv("edges data.csv")
+Nodes_1 <- read.csv ("tutorial_data.csv")
+
+# Rename columns for visNetwork compatibility
+colnames(Edges_1) <- c("from", "to", "weight")
+colnames(Nodes_1) <- c("id", "label", "trophic_level", "community")
+
+# Assign colors to nodes based on the community
+Nodes_1$color <- ifelse(Nodes_1$community == "Aquatic", "blue", 
+                           ifelse(Nodes_1$community == "Marine", "green", 
+                                  ifelse(Nodes_1$community == "Terrestrial", "brown", "gray")))
+
+# Create the interactive graph
+
+Interactive <- visNetwork(nodes = Nodes_1, edges = Edges_1)%>%
+  visNodes(size = 25, shape = "dot") %>%
+  visEdges(arrows = "to", width = 1) %>%
+  visIgraphLayout() %>%
+  visLayout(randomSeed = 123) %>%
+  visOptions(highlightNearest = TRUE, nodesIdSelection = TRUE)
+
+
+
+
+
+htmlwidgets::saveWidget(Interactive, "network_graph.html")
+browseURL("network_graph.html")
+
+
+
+
+
+
+
+
+                 
