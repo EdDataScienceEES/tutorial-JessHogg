@@ -234,12 +234,14 @@ custom <- plot(foodweb,
                 layout = layout.circle(foodweb))
 ```
 Creating Interactive graphs 
-An interactive graph is a more advanced visualisation. 
+
+An interactive graph is a more advanced visualisation and more effective when it comes to larger datasets. Interactive graphs allow you to zoom, pan and focus on specific interactions within a network resulting in locailised interactions being easier to visualise. 
+First we neeed to download a package that can create and interactive graph with the package igraph 
 ```r
-install.packages("visNetwork")
-library(visNetwork)
-Edges_1 <- read.csv("edges data.csv")
-Nodes_1 <- read.csv ("tutorial_data.csv")
+install.packages("visNetwork") # install new package
+library(visNetwork) # load package
+Edges_1 <- read.csv("edges data.csv") #load data 
+Nodes_1 <- read.csv ("tutorial_data.csv")# load data 
 
 # Rename columns for visNetwork compatibility
 colnames(Edges_1) <- c("from", "to", "weight")
@@ -261,8 +263,8 @@ Interactive <- visNetwork(nodes = Nodes_1, edges = Edges_1)%>%
 
 Interactive
 
-htmlwidgets::saveWidget(Interactive, "network_graph.html")
-browseURL("network_graph.html")
+htmlwidgets::saveWidget(Interactive, "network_graph.html") # save a copy of a link to graph 
+browseURL("network_graph.html") # open the link in web browser 
 ```
 ### Interactive Graph
 [View the Interactive Graph](https://eddatascienceees.github.io/tutorial-JessHogg/Graphs/network_graph.html)
