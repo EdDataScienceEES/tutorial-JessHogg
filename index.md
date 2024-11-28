@@ -75,7 +75,10 @@ network<- graph_from_adjacency_matrix(adj_matrix)
 network<- graph_from_data_frame(d = edge_list, directed = F)
 plot(network)
 ```
-Network: 
+network: 
 
 
 <img width="272" alt="image" src="https://github.com/user-attachments/assets/cdf30561-2e45-4daa-ae3a-c46c04d8259c">
+
+igraph allows you do decide the shape of the graph. Here are some examples of the different shapes available 
+<img width="394" alt="image" src="https://github.com/user-attachments/assets/eb6786e5-9dd0-4a2a-bcc8-0d2e2939c58e">
