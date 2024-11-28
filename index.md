@@ -1,4 +1,4 @@
-# Introduction to visualising networks using igraph
+# Introduction to Visualising Networks Using igraph
 ## Tutorial Aims: 
 1. To have an overall understanding of the package igraph
 2. To learn how to create, manipulate and analyse graphs  
