@@ -221,16 +221,7 @@ There are lots of function that allow you to customise the look of plot
 |Function	|Description|
 ---------------------------
 
-
-
-|vertex.label.cex = 	|Changes the size of the labels on the vertices | 
-|edge.arrow.size =  	|Used to adjust the size of the arrows of directed edges|
-|main = 	|Name of the title which gets displayed at the top of the graph |
-|Layout = 	|Defines the layout of the graph. Here are some examples: 
--	layout.circle
--	layout_with_fr
--	layout_with_kk|
-
+Example: 
 ```r
 plot(foodweb)
 custom <- plot(foodweb,
@@ -243,6 +234,7 @@ custom <- plot(foodweb,
                 layout = layout.circle(foodweb))
 ```
 Creating Interactive graphs 
+An interactive graph is a more advanced visualisation. 
 ```r
 install.packages("visNetwork")
 library(visNetwork)
