@@ -56,3 +56,17 @@ The code below shows you how to load a dataset the has been saved to your workin
 Edges <- read.csv("edges data.csv") 
 Nodes <- read.csv ("nodes data.csv") 
 ```
+igraph has different ways to create a graph object: 
+1. Using graph_from_data_frame
+2. Adjacency Matrix: A square matrix with rows and columns representing vertices, and values representing edge weights
+3. Edge List: A data frame with two columns (to and from) representing edges
+```r
+#1.
+foodweb <- graph_from_data_frame(d = Edges, vertices = Nodes, directed = TRUE)
+plot(foodweb)
+#2.
+adj_matrix <- as_adjacency_matrix(foodweb, attr = "Weight", sparse = FALSE)
+print(adj_matrix)
+#3. 
+edge_list <- as_data_frame(foodweb, what = "edges")
+print(edge_list)
