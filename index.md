@@ -23,10 +23,10 @@ Before we dive in to igraph lets define sone key concepts:
 
 Lets start! - Creating graphs from scratch
 First step is to install and load the igraph 
-
+```r
 install.packages("igraph") # install package 
 library(igraph) # load package
-
+```
 
 
 
