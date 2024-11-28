@@ -47,6 +47,12 @@ plot (g2) # undirected edges
 g3<- graph_from_literal(A -+ B -+ C -+ A) 
 plot(g3) # Directed edges
 ```
-<img width="425" alt="image" src="https://github.com/user-attachments/assets/9ce276d8-f121-40e0-a700-ca5323614e13">
 <img width="436" alt="image" src="https://github.com/user-attachments/assets/7a35a9ea-971e-43bf-a91c-82766e103e67">
 
+Now that have an understanding of plotting graphs lets start to incorporate datasets. 
+The code below shows you how to load a dataset the has been saved to your working directory. If you have the files saved somewhere else then that is fine, you just have to change put the path directory inside the brackets instead. 
+```r
+# load dataset(s)
+Edges <- read.csv("edges data.csv") 
+Nodes <- read.csv ("nodes data.csv") 
+```
