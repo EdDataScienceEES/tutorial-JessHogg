@@ -201,13 +201,14 @@ The plot: the degree Centrality is demonstrated in the network by the size of th
 
 It is good practice to identify the top 10 vertices with the highest degree centrality as they would be the species that play a vital role wihtin the network forming its structure and influencing stability. Therefore with this information you can start to research why this might be the case for your chosen ecological interactions.
 
-Creating a data table provides the specifc values that have been visulised in the plot which can then be used to further analyse relationships e.g. statistial tests and models (GLM) 
+Creating a data table provides the specifc values that have been visualised in the plot which can then be used to further analyse relationships e.g. statistial tests and models(GLM). 
 
 Anazing! You are now over halfway through this tutorial. Lets move onto the final section. 
 
 <a name="2"></a>
 ### Visulisation
-Custominsing graphs
+Customising graphs
+There are lots of function that allow you to customise the look
 ```r
 plot(foodweb)
 custom <- plot(foodweb,
@@ -244,6 +245,9 @@ Interactive <- visNetwork(nodes = Nodes_1, edges = Edges_1)%>%
   visLayout(randomSeed = 123) %>%
   visOptions(highlightNearest = TRUE, nodesIdSelection = TRUE)
 
+Interactive
+
 htmlwidgets::saveWidget(Interactive, "network_graph.html")
 browseURL("network_graph.html")
 ```
+file:///C:/Users/Jess/OneDrive/Documents/Jess/University/year%203/Data%20Science/Interactive.html
