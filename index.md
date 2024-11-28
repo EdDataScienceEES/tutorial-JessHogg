@@ -148,6 +148,7 @@ plot(largest_component,
 ```
 
 <img width="280" alt="image" src="https://github.com/user-attachments/assets/aecb5b9b-ded6-4052-8a89-b5748ffbac5c">
+
 Graph shows the shortest path which is highlighted with red egdes (lines) and green vertices (circles). 
 
 Exercise: 
