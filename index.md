@@ -96,3 +96,52 @@ plot(g7)
 Amazing! Now that we have been introduced to igraph and covered the basics lets have a try at manupulating and analysing data 
 <a name="2"></a>
 ### Analysis and Manipulation
+Communites 
+```r
+comm <- cluster_edge_betweenness(foodweb)
+print(comm)
+comm_2 <- cluster_louvain(network)
+plot(comm_2, network)
+```
+Shortest path
+```r
+shortest <- shortest_paths(g, from = 1)
+print(shortest$vpath[1:5])
+```
+Degree
+```r
+deg <- degree(foodweb)
+print(deg)
+
+hist(deg, 
+     main = "Degree Distribution", 
+     xlab = "Degree", 
+     ylab = "Frequency", 
+     col = "skyblue", 
+     border = "black", 
+     breaks = 10)
+
+plot(foodweb, 
+     vertex.size = deg * 3,  # Adjust the size based on the degree
+     vertex.color = "lightblue", 
+     edge.color = "gray", 
+     vertex.label.color = "black", 
+     main = "Food Web with Degree Centrality (Vertex Size)")
+
+sorted_deg <- sort(deg, decreasing = TRUE)
+
+# Print the top 10 vertices with the highest degree centrality
+print(sorted_deg[1:10])
+
+normalized_deg <- deg / max(deg)
+
+# Print normalized degree centrality
+print(normalized_deg)
+
+
+degree_table <- data.frame(Vertex = names(deg), Degree = deg)
+
+# Print the degree table
+print(degree_table)
+```
+
