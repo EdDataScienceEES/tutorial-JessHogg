@@ -35,4 +35,16 @@ plot(first_graph) # this is to manulally create smaller graphs
 g <- graph_from_literal(A - B - C, A - D)
 plot(g) # creates graphs using simple text-like representation useful for small illustrative examples
 ```
+If you want to include multiple edges then use can add : However you need to know if your edges are undirected or directed
+- Directed: when an edge has a specific direction from one vertex to another. In other words if it demonstrates a one way relationship. When graph is plotted arrows appear to show direction
+- Undirected: when an edge does not have a direction, therefore a mutualistic relationship between vertices. No arrows present when plotted just soild lines. 
+
+```r
+g1 <- graph_from_literal(A - B:C, A-D)
+plot(g1) # multiple edges 
+g2<- graph_from_literal(A--B--C--A)
+plot (g2) # undirected edges 
+g3<- graph_from_literal(A -+ B -+ C -+ A) 
+plot(g3) # Directed edges
+```
 
