@@ -2,7 +2,7 @@
 ## Tutorial Aims: 
 1. To have an overall understanding of the package igraph
 2. To become confident with creating, manipulating and analysing graphs  
-3. To become confident in visualisation skills 
+3. To learn effective visualisation skills 
    
 ## Tutorial Steps: 
 #### <a href="#1"> 1. Introduction to igraph and Basics</a>
