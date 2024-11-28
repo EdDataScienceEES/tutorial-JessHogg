@@ -144,4 +144,45 @@ degree_table <- data.frame(Vertex = names(deg), Degree = deg)
 # Print the degree table
 print(degree_table)
 ```
+<a name="2"></a>
+### Visulisation
+Custominsing graphs
+```r
+plot(foodweb)
+custom <- plot(foodweb,
+                vertex.size = 20,
+                vertex.color = "orange",
+                vertex.label.color = "black",
+                vertex.label.cex = 1.5,
+                edge.arrow.size = 0.5,
+                main = "Customisied graph",
+                layout = layout.circle(foodweb))
+```
+Creating Interactive graphs 
+```r
+nstall.packages("visNetwork")
+library(visNetwork)
+Edges_1 <- read.csv("edges data.csv")
+Nodes_1 <- read.csv ("tutorial_data.csv")
 
+# Rename columns for visNetwork compatibility
+colnames(Edges_1) <- c("from", "to", "weight")
+colnames(Nodes_1) <- c("id", "label", "trophic_level", "community")
+
+# Assign colors to nodes based on the community
+Nodes_1$color <- ifelse(Nodes_1$community == "Aquatic", "blue", 
+                           ifelse(Nodes_1$community == "Marine", "green", 
+                                  ifelse(Nodes_1$community == "Terrestrial", "brown", "gray")))
+
+# Create the interactive graph
+
+Interactive <- visNetwork(nodes = Nodes_1, edges = Edges_1)%>%
+  visNodes(size = 25, shape = "dot") %>%
+  visEdges(arrows = "to", width = 1) %>%
+  visIgraphLayout() %>%
+  visLayout(randomSeed = 123) %>%
+  visOptions(highlightNearest = TRUE, nodesIdSelection = TRUE)
+
+htmlwidgets::saveWidget(Interactive, "network_graph.html")
+browseURL("network_graph.html")
+```
