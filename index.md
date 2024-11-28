@@ -272,4 +272,4 @@ browseURL("network_graph.html") # open the link in web browser
 ### Interactive Graph
 [View the Interactive Graph](https://eddatascienceees.github.io/tutorial-JessHogg/Graphs/network_graph.html)
 
-Congratulations you have sucessfully completed the tutorial!
+Congratulations you have sucessfully completed the tutorial! You now have all the techniques and information you need to start incorporating igraph into your on data science projects. If you would like to ask any questions (e.g. about the exercise) please contact me at s2421495@ed.ac.uk. Goodluck!
