@@ -4,13 +4,13 @@
 2. To learn how to create, manipulate and analyse graphs  
 3. To product effective and informative graphs  ... To become confident 
    
-### Tutorial Steps: 
+## Tutorial Steps: 
 #### <a href="#1"> 1. Introduction to igraph and Basics</a>
 #### <a href="#2"> 2. Analysis and Manipultion</a>
 #### <a href="#3"> 3. Visulisation</a>
 
 <a name="1"></a>
-## 1. Introduction to igraph and Basics 
+### 1. Introduction to igraph and Basics 
 
 Welcome to the igraph tutorial! 
 Don't worry if you are not familiar with the igraph package yet. We will start from the begining taking it step by step so you will be confident in no time.  
