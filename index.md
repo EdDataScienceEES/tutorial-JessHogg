@@ -1,4 +1,5 @@
 # Introduction to Visualising Networks Using igraph
+Created by Jess hogg in Nov 2024
 ## Tutorial Aims: 
 1. To have an overall understanding of the package igraph
 2. To become confident with creating, manipulating and analysing graphs  
