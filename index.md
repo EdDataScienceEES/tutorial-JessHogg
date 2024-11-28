@@ -70,3 +70,8 @@ print(adj_matrix)
 #3. 
 edge_list <- as_data_frame(foodweb, what = "edges")
 print(edge_list)
+# Visulise Network 
+network<- graph_from_adjacency_matrix(adj_matrix)
+network<- graph_from_data_frame(d = edge_list, directed = F)
+plot(network)
+<img width="272" alt="image" src="https://github.com/user-attachments/assets/cdf30561-2e45-4daa-ae3a-c46c04d8259c">
