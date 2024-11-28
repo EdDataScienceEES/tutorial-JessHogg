@@ -100,8 +100,8 @@ Community Detection
 igraph allows you to detected different communities in networks.In network analysis, a community is a subset of nodes that are more densely connected to each other than to the other communities in the same graph. Community detection is the method used to locate these communities based on the networks structure. In a biological network identifying communites can provide insight into substructures such as ecologialc niches in food webs.
 
 Two different methods of detection: 
-- Edge betweenness method: ```r cluster_edge_betweenness ``` detects communites by repeated removing edges with the highest betweenness centrality which are edges that connect differnent clusters. This process continues until the graph is divided into clear communities. This methods is better used to identiy communities in smaller networks than larger networks due to the repeated calculation of highest betweeness centraility. 
-- Louvain method: ```r Cluster_louvain ```  is faster and more effective at detetcing communites in larger networks becasue it measures the density of connections within communities compared to between them. 
+- Edge betweenness method: ``` cluster_edge_betweenness ``` detects communites by repeated removing edges with the highest betweenness centrality which are edges that connect differnent clusters. This process continues until the graph is divided into clear communities. This methods is better used to identiy communities in smaller networks than larger networks due to the repeated calculation of highest betweeness centraility. 
+- Louvain method: ``` cluster_louvain ```  is faster and more effective at detetcing communites in larger networks becasue it measures the density of connections within communities compared to between them. 
 
   
 ```r
@@ -111,9 +111,9 @@ comm_2 <- cluster_louvain(network) # detecting communites using Louvain methods
 plot(comm_2, network) # visulising louvain communites on network
 ```
 Outputs: 
-- ```r print(comm)``` shows the number of communites and what communties each node has been assigned to
-- The graph produced by ```rplot(comm_2, network) ``` highlights nodes that belong to the same communites, each community is shown by different colors. This helps to visulise the communites present and how/ if they interact with each other
--  
+- ```print(comm)``` shows the number of communites and what communties each node has been assigned to
+- The graph produced by ```plot(comm_2, network) ``` highlights nodes that belong to the same communites, each community is shown by different colors. This helps to visulise the communites present and how/ if they interact with each other
+
 <img width="278" alt="image" src="https://github.com/user-attachments/assets/e00fe8bf-6fd5-4b54-beb9-4b197c06066c">
 
 
