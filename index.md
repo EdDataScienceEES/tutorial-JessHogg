@@ -149,16 +149,18 @@ plot(largest_component,
 <img width="280" alt="image" src="https://github.com/user-attachments/assets/aecb5b9b-ded6-4052-8a89-b5748ffbac5c">
 Graph shows the shortest path which is highlighted with red egdes (lines) and green vertices (circles). 
 
+Exercise: 
+- Try and find the shortest path when considering weight. What happens? Any changes?
 
+Degree Centrality
+It a measurement in network analysis that quantifies the number of connections a vertex has. It is calculated by counting the edges connected to a vertex. A higher value suggest that the vertex play a more important role in the network as it has more direct relationships with other vertices indication a greater influence. 
 
-
-
-
-Degree
 ```r
+# Calculate degree centrality
 deg <- degree(foodweb)
 print(deg)
 
+# plot a histogram of degree distrubtion 
 hist(deg, 
      main = "Degree Distribution", 
      xlab = "Degree", 
@@ -174,22 +176,33 @@ plot(foodweb,
      vertex.label.color = "black", 
      main = "Food Web with Degree Centrality (Vertex Size)")
 
-sorted_deg <- sort(deg, decreasing = TRUE)
-
 # Print the top 10 vertices with the highest degree centrality
+sorted_deg <- sort(deg, decreasing = TRUE)
 print(sorted_deg[1:10])
 
-normalized_deg <- deg / max(deg)
-
 # Print normalized degree centrality
+normalized_deg <- deg / max(deg)
 print(normalized_deg)
-
 
 degree_table <- data.frame(Vertex = names(deg), Degree = deg)
 
 # Print the degree table
 print(degree_table)
 ```
+The histogram: Shows that as the number of interactions (degree) increases along the x axis, the number of species (frequency) is decreasing when looking at the y axis. Therefore the majority of species have low connectiveity due to the reduced interactions. 
+
+<img width="284" alt="image" src="https://github.com/user-attachments/assets/35cc1a92-cca4-4ede-9152-624380786fda">
+
+The plot: the degree Centrality is demonstrated in the network by the size of the vertices, larger vertex = higher degree centrality, smaller vertex = lower degree centrality. 
+
+<img width="272" alt="image" src="https://github.com/user-attachments/assets/02fdf84c-2072-4005-87b1-f04a8d02ceee">
+
+It is good practice to identify the top 10 vertices with the highest degree centrality as they would be the species that play a vital role wihtin the network forming its structure and influencing stability. Therefore with this information you can start to research why this might be the case for your chosen ecological interactions.
+
+Creating a data table provides the specifc values that have been visulised in the plot which can then be used to further analyse relationships e.g. statistial tests and models (GLM) 
+
+Anazing! You are now over halfway through this tutorial. Lets move onto the final section. 
+
 <a name="2"></a>
 ### Visulisation
 Custominsing graphs
