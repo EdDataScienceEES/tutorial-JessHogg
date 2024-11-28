@@ -119,7 +119,8 @@ Outputs:
 Exercise: 
 - Try detecting communities using other methods of detection available in igraph (e.g., cluster_walktrap or cluster_fast_greedy). How do the results compare? What are the noticiable differences between graphs? 
 
-Shortest path
+Shortest path:
+
 The ```shortest_path``` calculates the lenght of all the shortest paths from or to the vertices in a network. To do this it uses the minimum number of edges that are essential for the connection between two vertices. 
 
 First lets make sure that the graph is prepared for analysis by running ```is_connected() ```. You will notice that the output says FALSE this means that the graph is not fully connected therefore if we tried to use ```shortest_path ``` we would get an error message like this: 
