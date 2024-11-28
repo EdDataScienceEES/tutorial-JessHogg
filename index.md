@@ -154,7 +154,8 @@ Exercise:
 - Try and find the shortest path when considering weight. What happens? Any changes?
 
 Degree Centrality
-It a measurement in network analysis that quantifies the number of connections a vertex has. It is calculated by counting the edges connected to a vertex. A higher value suggest that the vertex play a more important role in the network as it has more direct relationships with other vertices indication a greater influence. 
+
+Is a measurement in network analysis that quantifies the number of connections a vertex has. It is calculated by counting the edges connected to a vertex. A higher value suggest that the vertex play a more important role in the network as it has more direct relationships with other vertices indication a greater influence. 
 
 ```r
 # Calculate degree centrality
