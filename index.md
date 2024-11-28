@@ -6,7 +6,7 @@
    
 ## Tutorial Steps: 
 #### <a href="#1"> 1. Introduction to igraph and Basics</a>
-#### <a href="#2"> 2. Analysis and Manipultion</a>
+#### <a href="#2"> 2. Analysis and Manipulation</a>
 #### <a href="#3"> 3. Visulisation</a>
 
 <a name="1"></a>
@@ -92,3 +92,7 @@ g7<- make_lattice(dimvector = c(3, 3))
 plot(g7)
 ```
 <img width="394" alt="image" src="https://github.com/user-attachments/assets/eb6786e5-9dd0-4a2a-bcc8-0d2e2939c58e">
+
+Amazing! Now that we have been introduced to igraph and covered the basics lets have a try at manupulating and analysing data 
+<a name="2"></a>
+### Analysis and Manipulation
