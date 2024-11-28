@@ -47,4 +47,5 @@ plot (g2) # undirected edges
 g3<- graph_from_literal(A -+ B -+ C -+ A) 
 plot(g3) # Directed edges
 ```
+[Rplot1.pdf](https://github.com/user-attachments/files/17941883/Rplot1.pdf)
 
