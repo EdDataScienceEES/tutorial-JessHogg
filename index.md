@@ -209,6 +209,8 @@ Anazing! You are now over halfway through this tutorial. Lets move onto the fina
 ### Visualisation
 Customising graphs
 There are lots of function that allow you to customise the look of plot 
+
+
 | **Function**          | **Description**                                                                                         |
 |------------------------|---------------------------------------------------------------------------------------------------------|
 | `vertex.size = `       |    Sets a fixed size of the vertices. Larger values = larger vertices          |
@@ -268,3 +270,5 @@ browseURL("network_graph.html") # open the link in web browser
 ```
 ### Interactive Graph
 [View the Interactive Graph](https://eddatascienceees.github.io/tutorial-JessHogg/Graphs/network_graph.html)
+
+Congratulations you have sucessfully completed the tutorial!
