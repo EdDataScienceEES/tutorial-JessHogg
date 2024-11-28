@@ -19,7 +19,13 @@ We will explore the dynamic igraph package in R, which is an open source used to
 
 Before we dive in to igraph lets define sone key concepts: 
 - A vertex (node) is an indiviual element of the network(graph) e.g. species
-- An link (edge) is the connection between two vertices showing a relationship e.g. predator-prey relationship.  
+- An link (edge) is the connection between two vertices showing a relationship e.g. predator-prey relationship.
+
+<u>Lets start! - Creating graphs from scratch</u> 
+
+
+
+
 
 
 
