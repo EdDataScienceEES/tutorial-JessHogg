@@ -208,7 +208,21 @@ Anazing! You are now over halfway through this tutorial. Lets move onto the fina
 <a name="2"></a>
 ### Visulisation
 Customising graphs
-There are lots of function that allow you to customise the look
+There are lots of function that allow you to customise the look of plot 
+
+|Function	|Description|
+---------------------------
+|vertex.size = 	|Sets a fixes size of the vertices. Larger values = larger vertices|
+|vertex.color = |Allows you to choose the colour of the vertices. Can be a single colour of can customise colours for vertex (communities)|
+|vertex.label.color = 	|Specifies the colour of the labels shown on the vertices |
+|vertex.label.cex = 	|Changes the size of the labels on the vertices | 
+|edge.arrow.size =  	|Used to adjust the size of the arrows of directed edges|
+|main = 	|Name of the title which gets displayed at the top of the graph |
+|Layout = 	|Defines the layout of the graph. Here are some examples: 
+-	layout.circle
+-	layout_with_fr
+-	Layout_with_kk|
+
 ```r
 plot(foodweb)
 custom <- plot(foodweb,
