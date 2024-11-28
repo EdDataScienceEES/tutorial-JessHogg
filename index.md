@@ -81,4 +81,14 @@ network:
 <img width="272" alt="image" src="https://github.com/user-attachments/assets/cdf30561-2e45-4daa-ae3a-c46c04d8259c">
 
 igraph allows you do decide the shape of the graph. Here are some examples of the different shapes available 
+```r
+g_ring<- make_ring(10)
+plot(g_ring)
+g5 <- make_star(n = 6, mode = "undirected")
+plot(g5)
+g6 <- make_tree(n = 7, children = 2)
+plot(g6)
+g7<- make_lattice(dimvector = c(3, 3))
+plot(g7)
+```
 <img width="394" alt="image" src="https://github.com/user-attachments/assets/eb6786e5-9dd0-4a2a-bcc8-0d2e2939c58e">
