@@ -7,7 +7,7 @@
 ## Tutorial Steps: 
 #### <a href="#1"> 1. Introduction to igraph and Basics</a>
 #### <a href="#2"> 2. Analysis and Manipulation</a>
-#### <a href="#3"> 3. Visulisation</a>
+#### <a href="#3"> 3. Visualisation</a>
 
 <a name="1"></a>
 ### 1. Introduction to igraph and Basics 
@@ -205,8 +205,8 @@ Creating a data table provides the specifc values that have been visualised in t
 
 Anazing! You are now over halfway through this tutorial. Lets move onto the final section. 
 
-<a name="2"></a>
-### Visulisation
+<a name="3"></a>
+### Visualisation
 Customising graphs
 There are lots of function that allow you to customise the look of plot 
 | **Function**          | **Description**                                                                                         |
