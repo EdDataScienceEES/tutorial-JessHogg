@@ -57,7 +57,7 @@ Edges <- read.csv("edges data.csv")
 Nodes <- read.csv ("nodes data.csv") 
 ```
 igraph has different ways to create a graph object: 
-1. Using graph_from_data_frame
+1. Using ```rgraph_from_data_frame```
 2. Adjacency Matrix: A square matrix with rows and columns representing vertices, and values representing edge weights
 3. Edge List: A data frame with two columns (to and from) representing edges
 ```r
@@ -110,6 +110,13 @@ print(comm) # print community structure details
 comm_2 <- cluster_louvain(network) # detecting communites using Louvain methods 
 plot(comm_2, network) # visulising louvain communites on network
 ```
+Outputs: 
+- ```r print(comm)``` shows the number of communites and what communties each node has been assigned to
+- <img width="278" alt="image" src="https://github.com/user-attachments/assets/e00fe8bf-6fd5-4b54-beb9-4b197c06066c"> Communites are highlighted 
+
+
+
+
 Shortest path
 ```r
 shortest <- shortest_paths(g, from = 1)
