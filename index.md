@@ -96,12 +96,19 @@ plot(g7)
 Amazing! Now that we have been introduced to igraph and covered the basics lets have a try at manupulating and analysing data 
 <a name="2"></a>
 ### Analysis and Manipulation
-Communites 
+Community Detection 
+igraph allows you to detected different communities in networks.In network analysis, a community is a subset of nodes that are more densely connected to each other than to the other communities in the same graph. Community detection is the method used to locate these communities based on the networks structure. In a biological network identifying communites can provide insight into substructures such as ecologialc niches in food webs.
+
+Two different methods of detection: 
+- Edge betweenness method: ```r cluster_edge_betweenness ``` detects communites by repeated removing edges with the highest betweenness centrality which are edges that connect differnent clusters. This process continues until the graph is divided into clear communities. This methods is better used to identiy communities in smaller networks than larger networks due to the repeated calculation of highest betweeness centraility. 
+- Louvain method: ```r Cluster_louvain ```  is faster and more effective at detetcing communites in larger networks becasue it measures the density of connections within communities compared to between them. 
+
+  
 ```r
-comm <- cluster_edge_betweenness(foodweb)
-print(comm)
-comm_2 <- cluster_louvain(network)
-plot(comm_2, network)
+comm <- cluster_edge_betweenness(foodweb) # detecting communites using Edges betweeness method
+print(comm) # print community structure details
+comm_2 <- cluster_louvain(network) # detecting communites using Louvain methods 
+plot(comm_2, network) # visulising louvain communites on network
 ```
 Shortest path
 ```r
