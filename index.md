@@ -116,13 +116,24 @@ Outputs:
 
 <img width="278" alt="image" src="https://github.com/user-attachments/assets/e00fe8bf-6fd5-4b54-beb9-4b197c06066c">
 
-
-
+Exercise: 
+- Try detecting communities using other methods of detection available in igraph (e.g., cluster_walktrap or cluster_fast_greedy). How do the results compare? What are the noticiable differences between graphs? 
 
 Shortest path
 ```r
-shortest <- shortest_paths(g, from = 1)
-print(shortest$vpath[1:5])
+is_connected(network)
+components_info <- components(network)
+largest_component <- induced_subgraph(network, components_info$membership == which.max(components_info$csize))
+plot(largest_component)
+path <- shortest_paths(largest_component, from = 1, to = 5)
+print(path$vpath[1:5])
+shortest_path_vertices <- path$vpath[[1]]
+shortest_path_edges <- E(largest_component)[.from(shortest_path_vertices) %--% .to(shortest_path_vertices)]
+plot(largest_component, 
+     vertex.size = 15, 
+     vertex.label.cex = 1.5, 
+     edge.color = ifelse(E(largest_component) %in% shortest_path_edges, "red", "gray"),  # Highlight path in red
+     main = "Graph with Shortest Path Highlighted")
 ```
 Degree
 ```r
