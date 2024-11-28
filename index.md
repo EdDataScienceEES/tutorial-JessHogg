@@ -30,7 +30,9 @@ library(igraph) # load package
 ```
 Once we have successfully loaded igraph then we can start to create some simple graphs to familirse ourselves with certain function that this package offers 
 ```r
-
-
-
+first_graph <- make_graph(c(1, 2, 2, 3, 3, 4), directed = TRUE)
+plot(first_graph) # this is to manulally create smaller graphs 
+g <- graph_from_literal(A - B - C, A - D)
+plot(g) # creates graphs using simple text-like representation useful for small illustrative examples
+```
 
