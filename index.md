@@ -112,7 +112,9 @@ plot(comm_2, network) # visulising louvain communites on network
 ```
 Outputs: 
 - ```r print(comm)``` shows the number of communites and what communties each node has been assigned to
-- <img width="278" alt="image" src="https://github.com/user-attachments/assets/e00fe8bf-6fd5-4b54-beb9-4b197c06066c"> Communites are highlighted 
+- The graph produced by ```rplot(comm_2, network) ``` highlights nodes that belong to the same communites, each community is shown by different colors. This helps to visulise the communites present and how/ if they interact with each other
+-  
+<img width="278" alt="image" src="https://github.com/user-attachments/assets/e00fe8bf-6fd5-4b54-beb9-4b197c06066c">
 
 
 
