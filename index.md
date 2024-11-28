@@ -48,4 +48,5 @@ g3<- graph_from_literal(A -+ B -+ C -+ A)
 plot(g3) # Directed edges
 ```
 <img width="425" alt="image" src="https://github.com/user-attachments/assets/9ce276d8-f121-40e0-a700-ca5323614e13">
+![image](https://github.com/user-attachments/assets/5df5d3a7-cc67-4d85-909d-a33f27411bfd)
 
