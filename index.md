@@ -251,4 +251,4 @@ htmlwidgets::saveWidget(Interactive, "network_graph.html")
 browseURL("network_graph.html")
 ```
 ### Interactive Graph
-[View the Interactive Graph](https://JessHogg.github.io/tutorial-JessHogg/Graphs/network_graph.html)
+[View the Interactive Graph](https://eddatascienceees.github.io/tutorial-JessHogg/Graphs/network_graph.html)
