@@ -96,7 +96,7 @@ plot(g7)
 Amazing! Now that we have been introduced to igraph and covered the basics lets have a try at manupulating and analysing data 
 <a name="2"></a>
 ### Analysis and Manipulation
-Community Detection 
+Community Detection:
 igraph allows you to detected different communities in networks.In network analysis, a community is a subset of nodes that are more densely connected to each other than to the other communities in the same graph. Community detection is the method used to locate these communities based on the networks structure. In a biological network identifying communites can provide insight into substructures such as ecologialc niches in food webs.
 
 Two different methods of detection: 
@@ -120,21 +120,40 @@ Exercise:
 - Try detecting communities using other methods of detection available in igraph (e.g., cluster_walktrap or cluster_fast_greedy). How do the results compare? What are the noticiable differences between graphs? 
 
 Shortest path
+The ```shortest_path``` calculates the lenght of all the shortest paths from or to the vertices in a network. To do this it uses the minimum number of edges that are essential for the connection between two vertices. 
+
+First lets make sure that the graph is prepared for analysis by running ```is_connected() ```. You will notice that the output says FALSE this means that the graph is not fully connected therefore if we tried to use ```shortest_path ``` we would get an error message like this: 
+```Warning message:
+In shortest_paths(network, from = V(network), to = V(network)) :
+  At vendor/cigraph/src/paths/unweighted.c:444 : Couldn't reach some vertices.```
+Therefore we use the components() to identify connections and will select for the largest one. 
+
 ```r
-is_connected(network)
-components_info <- components(network)
-largest_component <- induced_subgraph(network, components_info$membership == which.max(components_info$csize))
-plot(largest_component)
-path <- shortest_paths(largest_component, from = 1, to = 5)
-print(path$vpath[1:5])
-shortest_path_vertices <- path$vpath[[1]]
-shortest_path_edges <- E(largest_component)[.from(shortest_path_vertices) %--% .to(shortest_path_vertices)]
+is_connected(network) # checking if graph is fully connected (preperation for analysis) 
+components_info <- components(network) # identify connections 
+largest_component <- induced_subgraph(network, components_info$membership == which.max(components_info$csize)) # only include the largest connected components from the network
+plot(largest_component) # visualise only largest components 
+path <- shortest_paths(largest_component, from = 1, to = 5) # calculate the shortest path 
+print(path$vpath[1:5]) # print the first 5 paths 
+shortest_path_vertices <- path$vpath[[1]] # extracting vertices 
+shortest_path_edges <- E(largest_component)[.from(shortest_path_vertices) %--% .to(shortest_path_vertices)] # extracting edges
 plot(largest_component, 
-     vertex.size = 15, 
-     vertex.label.cex = 1.5, 
-     edge.color = ifelse(E(largest_component) %in% shortest_path_edges, "red", "gray"),  # Highlight path in red
-     main = "Graph with Shortest Path Highlighted")
+     vertex.size = 15,                         
+     vertex.color = ifelse(V(largest_component) %in% shortest_path_vertices, "green", "lightblue"), 
+     vertex.label.cex = 1.2,                    
+     edge.color = ifelse(E(largest_component) %in% shortest_path_edges, "red", "gray"), 
+     edge.arrow.size = 0.5,                     
+     main = "Shortest Path in the Largest Component") 
 ```
+
+<img width="280" alt="image" src="https://github.com/user-attachments/assets/aecb5b9b-ded6-4052-8a89-b5748ffbac5c">
+Graph shows the shortest path which is highlighted with red egdes (lines) and green vertices (circles). 
+
+
+
+
+
+
 Degree
 ```r
 deg <- degree(foodweb)
@@ -187,7 +206,7 @@ custom <- plot(foodweb,
 ```
 Creating Interactive graphs 
 ```r
-nstall.packages("visNetwork")
+install.packages("visNetwork")
 library(visNetwork)
 Edges_1 <- read.csv("edges data.csv")
 Nodes_1 <- read.csv ("tutorial_data.csv")
