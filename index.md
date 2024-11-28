@@ -21,14 +21,15 @@ Before we dive in to igraph lets define sone key concepts:
 - A vertex (node) is an indiviual element of the network(graph) e.g. species
 - An link (edge) is the connection between two vertices showing a relationship e.g. predator-prey relationship.
 
-Lets start! - Creating graphs from scratch
+Lets start! - Understanding the basics
+
 First step is to install and load the igraph 
 ```r
 install.packages("igraph") # install package 
 library(igraph) # load package
 ```
-
-
+Once we have successfully loaded igraph then we can start to create some simple graphs to familirse ourselves with certain function that this package offers 
+```r
 
 
 
