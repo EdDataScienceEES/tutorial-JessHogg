@@ -288,4 +288,13 @@ browseURL("network_graph.html") # open the link in web browser
 ### Interactive Graph
 [View the Interactive Graph](https://eddatascienceees.github.io/tutorial-JessHogg/Graphs/network_graph.html)
 
-Congratulations you have successfully completed the tutorial! You now have all the techniques and information you need to start incorporating igraph into your own data science projects. If you would like to ask any questions (e.g. about the exercise) please contact me at s2421495@ed.ac.uk. Good luck!
+Congratulations you have successfully completed the tutorial! You now have all the techniques and information you need to start incorporating igraph into your own data science projects. 
+
+You now know: 
+- Some of the key concepts used in igraph i.e vertex (node), link (edge)
+- Customise graph visualisation using differnt layouts and styles
+- Perform analysis measures like degree centrality, shortest path and community detection
+- 
+
+
+If you would like to ask any questions (e.g. about the exercise) please contact me at s2421495@ed.ac.uk. Good luck!
