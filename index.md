@@ -295,4 +295,6 @@ You now know:
 - How to customise graph visualisation using different layouts and styles
 - How to perform analysis measures like degree centrality, shortest path and community detection
   
-If you would like to ask any questions (e.g. about the exercise) please contact me at s2421495@ed.ac.uk. Good luck!
+If you would like to ask any questions (e.g. about the exercise) please contact me at s2421495@ed.ac.uk. 
+
+Good luck!
