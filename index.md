@@ -17,7 +17,7 @@ Link to website version: https://eddatascienceees.github.io/tutorial-JessHogg/#1
 ### 1. Introduction to igraph and Basics 
 
 Welcome to the igraph tutorial! 
-Don't worry if you are not familiar with the igraph package yet. We will start from the beginning taking it step by step so you will be confident in no time.  
+Don't worry if you are not familiar with the igraph package yet. We will start from the beginning taking it step-by-step so you will be confident in no time.  
 
 We will explore the dynamic igraph package in R, which is an open source used to create, analyse and visualise networks and graph routines. Networks and graphs are a key component when modelling relationships and interactions of complex systems/structures. Whether you are working in social, communication or biological fields igraph is useful to help understand individual connections. We will focus on using igraph to visualise biological networks specifically ecological food webs. As food webs represent the feeding relationships within an environment where different species are connected by predator-prey interactions. 
 
