@@ -246,7 +246,7 @@ custom <- plot(foodweb,
                 vertex.label.color = "black",
                 vertex.label.cex = 1.5,
                 edge.arrow.size = 0.5,
-                main = "Customisied graph",
+                main = "Customised graph",
                 layout = layout.circle(foodweb))
 ```
 Creating Interactive graphs 
