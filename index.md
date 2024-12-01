@@ -121,7 +121,7 @@ Outputs:
 <img width="278" alt="image" src="https://github.com/user-attachments/assets/e00fe8bf-6fd5-4b54-beb9-4b197c06066c">
 
 Exercise: 
-- Try detecting communities using other methods of detection available in igraph (e.g., cluster_walktrap or cluster_fast_greedy). How do the results compare? What are the noticeable differences between graphs? 
+- Try detecting communities using other methods of detection available in igraph (e.g. cluster_walktrap or cluster_fast_greedy). How do the results compare? What are the noticeable differences between graphs? 
 
 Shortest path:
 
