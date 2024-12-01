@@ -1,8 +1,8 @@
 # Introduction to Visualising Networks Using igraph
-Created by Jess hogg in Nov 2024
+Created by Jess Hogg in Nov 2024
 
 
-For this tutorial in a website version click here: https://eddatascienceees.github.io/tutorial-JessHogg/#1
+Website version of this tutorial: https://eddatascienceees.github.io/tutorial-JessHogg/#1
 ## Tutorial Aims: 
 1. To have an overall understanding of the package igraph
 2. To become confident with creating, manipulating and analysing graphs  
