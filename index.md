@@ -223,6 +223,7 @@ Amazing! You are now over halfway through this tutorial. Let's move onto the fin
 Customising graphs
 There are lots of functions that allow you to customise the look of plot 
 
+<img width="638" alt="image" src="https://github.com/user-attachments/assets/9e27d759-d878-4dc8-ab61-27d933f49b53">
 
 | **Function**          | **Description**                                                                                         |
 |------------------------|---------------------------------------------------------------------------------------------------------|
