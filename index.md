@@ -2,7 +2,7 @@
 Created by Jess hogg in Nov 2024
 
 
-For this tutorial in a website version see [this Link](https://eddatascienceees.github.io/tutorial-JessHogg/#1)
+For this tutorial in a website version copy and paste: https://eddatascienceees.github.io/tutorial-JessHogg/#1
 ## Tutorial Aims: 
 1. To have an overall understanding of the package igraph
 2. To become confident with creating, manipulating and analysing graphs  
