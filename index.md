@@ -292,9 +292,7 @@ Congratulations you have successfully completed the tutorial! You now have all t
 
 You now know: 
 - Some of the key concepts used in igraph i.e vertex (node), link (edge)
-- Customise graph visualisation using differnt layouts and styles
-- Perform analysis measures like degree centrality, shortest path and community detection
-- 
-
-
+- How to customise graph visualisation using differnt layouts and styles
+- How to perform analysis measures like degree centrality, shortest path and community detection
+  
 If you would like to ask any questions (e.g. about the exercise) please contact me at s2421495@ed.ac.uk. Good luck!
