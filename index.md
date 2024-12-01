@@ -19,10 +19,10 @@ Link to website version: https://eddatascienceees.github.io/tutorial-JessHogg/#1
 Welcome to the igraph tutorial! 
 Don't worry if you are not familiar with the igraph package yet. We will start from the beginning taking it step by step so you will be confident in no time.  
 
-We will explore the dynamic igraph package in R, which is an open source used to create, analyse and visualise networks and graph routines. Networks and graphs are a key component when modeling relationships and interactions of complex systems/structures. Whether you are working in social, communication or biological fields igraph is useful to help understand individual connections. We will focus on using igraph to visualise biological networks specifically ecological food webs. As food webs represent the feeding relationships within an environment where different species are connected by predator-prey interactions. 
+We will explore the dynamic igraph package in R, which is an open source used to create, analyse and visualise networks and graph routines. Networks and graphs are a key component when modelling relationships and interactions of complex systems/structures. Whether you are working in social, communication or biological fields igraph is useful to help understand individual connections. We will focus on using igraph to visualise biological networks specifically ecological food webs. As food webs represent the feeding relationships within an environment where different species are connected by predator-prey interactions. 
 
 Before we dive into igraph lets define some key concepts: 
-- A vertex (node) is an indiviual element of the network (graph) e.g. species
+- A vertex (node) is an individual element of the network (graph) e.g. species
 - A link (edge) is the connection between two vertices showing a relationship e.g. predator-prey relationship.
 
 Lets start! - Understanding the basics
@@ -41,7 +41,7 @@ plot(g) # creates graphs using simple text-like representation useful for small 
 ```
 If you want to include multiple edges then you can add : However you need to know if your edges are undirected or directed:
 - Directed: when an edge has a specific direction from one vertex to another. In other words if it demonstrates a one way relationship. When graph is plotted arrows appear to show direction
-- Undirected: when an edge does not have a direction, therefore a mutualistic relationship between vertices. No arrows present when plotted just soild lines. 
+- Undirected: when an edge does not have a direction, therefore a mutualistic relationship between vertices. No arrows present when plotted just solid lines. 
 
 ```r
 g1 <- graph_from_literal(A - B:C, A-D)
@@ -53,7 +53,7 @@ plot(g3) # Directed edges
 ```
 <img width="436" alt="image" src="https://github.com/user-attachments/assets/7a35a9ea-971e-43bf-a91c-82766e103e67">
 
-Now that we have an understanding of plotting graphs lets start to incorporate datasets. 
+Now that we have an understanding of plotting graphs let's start to incorporate datasets. 
 The code below shows you how to load a dataset that has been saved to your working directory. If you have the files saved somewhere else then that is fine, you just have to change inside the brackets to your path directory instead. 
 ```r
 # load dataset(s)
@@ -61,7 +61,7 @@ Edges <- read.csv("edges data.csv")
 Nodes <- read.csv ("nodes data.csv") 
 ```
 igraph has different ways to create a graph object: 
-1. Using ```rgraph_from_data_frame```
+1. Using ```graph_from_data_frame```
 2. Adjacency Matrix: A square matrix with rows and columns representing vertices, and values representing edge weights
 3. Edge List: A data frame with two columns (to and from) representing edges
 ```r
@@ -74,7 +74,7 @@ print(adj_matrix)
 #3. 
 edge_list <- as_data_frame(foodweb, what = "edges")
 print(edge_list)
-# Visulise Network 
+# Visualise Network 
 network<- graph_from_adjacency_matrix(adj_matrix)
 network<- graph_from_data_frame(d = edge_list, directed = F)
 plot(network)
@@ -101,10 +101,10 @@ Amazing! Now that we have been introduced to igraph and covered the basics, let'
 <a name="2"></a>
 ### Analysis and Manipulation
 Community Detection:
-igraph allows you to detect different communities in networks. In network analysis, a community is a subset of nodes that are more densely connected to each other than to the other communities in the same graph. Community detection is the method used to locate these communities based on the networks structure. In a biological network identifying communites can provide insight into substructures such as ecological niches in food webs.
+igraph allows you to detect different communities in networks. In network analysis, a community is a subset of nodes that are more densely connected to each other than to the other communities in the same graph. Community detection is the method used to locate these communities based on the networks structure. In a biological network identifying communities can provide insight into substructures such as ecological niches in food webs.
 
 Two different methods of detection: 
-- Edge betweenness method: ``` cluster_edge_betweenness ``` detects communites by repeatedly removing edges with the highest betweenness centrality which are edges that connect different clusters. This process continues until the graph is divided into clear communities. This method is better used to identify communities in smaller networks than larger networks due to the repeated calculation of highest betweenness centrality. 
+- Edge betweenness method: ``` cluster_edge_betweenness ``` detects communities by repeatedly removing edges with the highest betweenness centrality which are edges that connect different clusters. This process continues until the graph is divided into clear communities. This method is better used to identify communities in smaller networks than larger networks due to the repeated calculation of highest betweenness centrality. 
 - Louvain method: ``` cluster_louvain ```  is faster and more effective at detecting communities in larger networks, because it measures the density of connections within communities compared to between them. 
 
   
@@ -134,7 +134,7 @@ In shortest_paths(network, from = V(network), to = V(network)) :
 Therefore, we use the components() to identify connections and will select for the largest one. 
 
 ```r
-is_connected(network) # checking if graph is fully connected (preperation for analysis) 
+is_connected(network) # checking if graph is fully connected (preparation for analysis) 
 
 components_info <- components(network) # identify connections 
 
@@ -212,11 +212,11 @@ The plot: the degree centrality is demonstrated in the network by the size of th
 
 <img width="272" alt="image" src="https://github.com/user-attachments/assets/02fdf84c-2072-4005-87b1-f04a8d02ceee">
 
-It is good practice to identify the top 10 vertices with the highest degree centrality as they would be the species that play a vital role wihtin the network forming its structure and influencing stability. Therefore, with this information you can start to research why this might be the case for your chosen ecological interactions.
+It is good practice to identify the top 10 vertices with the highest degree centrality as they would be the species that play a vital role within the network forming its structure and influencing stability. Therefore, with this information you can start to research why this might be the case for your chosen ecological interactions.
 
-Creating a data table provides the specifc values that have been visualised in the plot which can then be used to further analyse relationships e.g. statistical tests and models(GLM). 
+Creating a data table provides the specific values that have been visualised in the plot which can then be used to further analyse relationships e.g. statistical tests and models (GLM). 
 
-Amazing! You are now over halfway through this tutorial. Lets move onto the final section. 
+Amazing! You are now over halfway through this tutorial. Let's move onto the final section. 
 
 <a name="3"></a>
 ### Visualisation
@@ -288,4 +288,4 @@ browseURL("network_graph.html") # open the link in web browser
 ### Interactive Graph
 [View the Interactive Graph](https://eddatascienceees.github.io/tutorial-JessHogg/Graphs/network_graph.html)
 
-Congratulations you have sucessfully completed the tutorial! You now have all the techniques and information you need to start incorporating igraph into your own data science projects. If you would like to ask any questions (e.g. about the exercise) please contact me at s2421495@ed.ac.uk. Good luck!
+Congratulations you have successfully completed the tutorial! You now have all the techniques and information you need to start incorporating igraph into your own data science projects. If you would like to ask any questions (e.g. about the exercise) please contact me at s2421495@ed.ac.uk. Good luck!
