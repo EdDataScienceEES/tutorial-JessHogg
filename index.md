@@ -225,17 +225,6 @@ There are lots of functions that allow you to customise the look of plot
 
 <img width="638" alt="image" src="https://github.com/user-attachments/assets/9e27d759-d878-4dc8-ab61-27d933f49b53">
 
-| **Function**          | **Description**                                                                                         |
-|------------------------|---------------------------------------------------------------------------------------------------------|
-| `vertex.size = `       |    Sets a fixed size of the vertices. Larger values = larger vertices          |
-| `vertex.color =`         | Allows you to choose the colour of the vertices. Can be a single colour or can customise colours for vertex (communities)                                                                                  |
-| `vertex.label.color =`   | Specifies the colour of the labels shown on the vertices                    |
-| `vertex.label.cex =`     | Changes the size of the labels on the vertices                                     |
-| `edge.arrow.size =`      | Used to adjust the size of the arrows of directed edges  |
-| `main`                 |Name of the title which gets displayed at the top of the graph                          |
-| `layout`               |  Defines the layout of the graph. Here are some examples:  layout.circle,   layout_with_fr , layout_with_kk         |
-|Function	|Description|
----------------------------
 
 Example: 
 ```r
