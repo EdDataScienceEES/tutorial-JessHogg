@@ -20,7 +20,7 @@ Don't worry if you are not familiar with the igraph package yet. We will start f
 We will explore the dynamic igraph package in R, which is an open source used to create, analyse and visualise networks and graph routines. Networks and graphs are a key component when modeling relationships and interactions of complex systems/structures. Whether you are working in social, communication or biological fields igraph is useful to help understand individual connections. We will focus on using igraph to visualise biological networks specifically ecological food webs. As food webs represent the feeding relationships within an environment where different species are connected by predator-prey interactions. 
 
 Before we dive into igraph lets define some key concepts: 
-- A vertex (node) is an indiviual element of the network(graph) e.g. species
+- A vertex (node) is an indiviual element of the network (graph) e.g. species
 - A link (edge) is the connection between two vertices showing a relationship e.g. predator-prey relationship.
 
 Lets start! - Understanding the basics
@@ -33,7 +33,7 @@ library(igraph) # load package
 Once we have successfully loaded igraph then we can start to create some simple graphs to familiarise ourselves with certain function that this package offers.
 ```r
 first_graph <- make_graph(c(1, 2, 2, 3, 3, 4), directed = TRUE)
-plot(first_graph) # this is to manulally create smaller graphs 
+plot(first_graph) # this is to manually create smaller graphs 
 g <- graph_from_literal(A - B - C, A - D)
 plot(g) # creates graphs using simple text-like representation useful for small illustrative examples
 ```
@@ -102,19 +102,19 @@ Community Detection:
 igraph allows you to detect different communities in networks. In network analysis, a community is a subset of nodes that are more densely connected to each other than to the other communities in the same graph. Community detection is the method used to locate these communities based on the networks structure. In a biological network identifying communites can provide insight into substructures such as ecological niches in food webs.
 
 Two different methods of detection: 
-- Edge betweenness method: ``` cluster_edge_betweenness ``` detects communites by repeatedly removing edges with the highest betweenness centrality which are edges that connect differnent clusters. This process continues until the graph is divided into clear communities. This method is better used to identify communities in smaller networks than larger networks due to the repeated calculation of highest betweenness centrality. 
-- Louvain method: ``` cluster_louvain ```  is faster and more effective at detetcing communites in larger networks, becasue it measures the density of connections within communities compared to between them. 
+- Edge betweenness method: ``` cluster_edge_betweenness ``` detects communites by repeatedly removing edges with the highest betweenness centrality which are edges that connect different clusters. This process continues until the graph is divided into clear communities. This method is better used to identify communities in smaller networks than larger networks due to the repeated calculation of highest betweenness centrality. 
+- Louvain method: ``` cluster_louvain ```  is faster and more effective at detecting communities in larger networks, because it measures the density of connections within communities compared to between them. 
 
   
 ```r
-comm <- cluster_edge_betweenness(foodweb) # detecting communites using Edges betweeness method
+comm <- cluster_edge_betweenness(foodweb) # detecting communities using Edges betweenness method
 print(comm) # print community structure details
-comm_2 <- cluster_louvain(network) # detecting communites using Louvain methods 
-plot(comm_2, network) # visulising louvain communites on network
+comm_2 <- cluster_louvain(network) # detecting communities using Louvain methods 
+plot(comm_2, network) # visualising louvain communities on network
 ```
 Outputs: 
-- ```print(comm)``` shows the number of communites and what communties each node has been assigned to
-- The graph produced by ```plot(comm_2, network) ``` highlights nodes that belong to the same communites, each community is shown by different colours. This helps to visualise the communites present and how/ if they interact with each other
+- ```print(comm)``` shows the number of communities and what communities each node has been assigned to
+- The graph produced by ```plot(comm_2, network) ``` highlights nodes that belong to the same communities, each community is shown by different colours. This helps to visualise the communities present and how/if they interact with each other
 
 <img width="278" alt="image" src="https://github.com/user-attachments/assets/e00fe8bf-6fd5-4b54-beb9-4b197c06066c">
 
@@ -123,9 +123,9 @@ Exercise:
 
 Shortest path:
 
-The ```shortest_path``` calculates the lenght of all the shortest paths from or to the vertices in a network. To do this it uses the minimum number of edges that are essential for the connection between two vertices. 
+The ```shortest_path``` calculates the length of all the shortest paths from or to the vertices in a network. To do this it uses the minimum number of edges that are essential for the connection between two vertices. 
 
-First lets make sure that the graph is prepared for analysis by running ```is_connected() ```. You will notice that the output says FALSE this means that the graph is not fully connected therefore if we tried to use ```shortest_path ``` we would get an error message like this: 
+First lets ensure that the graph is prepared for analysis by running ```is_connected() ```. You will notice that the output says FALSE this means that the graph is not fully connected therefore if we tried to use ```shortest_path ``` we would get an error message like this: 
 ```Warning message:
 In shortest_paths(network, from = V(network), to = V(network)) :
   At vendor/cigraph/src/paths/unweighted.c:444 : Couldn't reach some vertices.```
@@ -159,21 +159,21 @@ plot(largest_component,
 
 <img width="280" alt="image" src="https://github.com/user-attachments/assets/aecb5b9b-ded6-4052-8a89-b5748ffbac5c">
 
-Graph shows the shortest path which is highlighted with red egdes (lines) and green vertices (circles). 
+Graph shows the shortest path which is highlighted with red edges (lines) and green vertices (circles). 
 
 Exercise: 
 - Try and find the shortest path when considering weight. What happens? Any changes?
 
 Degree Centrality
 
-Is a measurement in network analysis that quantifies the number of connections a vertex has. It is calculated by counting the edges connected to a vertex. A higher value suggest that the vertex plays a more important role in the network as it has more direct relationships with other vertices indicating a greater influence. 
+Is a measurement in network analysis that quantifies the number of connections a vertex has. It is calculated by counting the edges connected to a vertex. A higher value suggests that the vertex plays a more important role in the network as it has more direct relationships with other vertices indicating a greater influence. 
 
 ```r
 # Calculate degree centrality
 deg <- degree(foodweb)
 print(deg)
 
-# plot a histogram of degree distrubtion 
+# plot a histogram of degree distribution 
 hist(deg, 
      main = "Degree Distribution", 
      xlab = "Degree", 
@@ -202,7 +202,7 @@ degree_table <- data.frame(Vertex = names(deg), Degree = deg)
 # Print the degree table
 print(degree_table)
 ```
-The histogram: Shows that as the number of interactions (degree) increases along the x axis, the number of species (frequency) is decreasing when looking at the y axis. Therefore the majority of species have low connectivity due to the reduced interactions. 
+The histogram: Shows that as the number of interactions (degree) increases along the x axis, the number of species (frequency) is decreasing when looking at the y axis. Therefore, the majority of species have low connectivity due to the reduced interactions. 
 
 <img width="284" alt="image" src="https://github.com/user-attachments/assets/35cc1a92-cca4-4ede-9152-624380786fda">
 
@@ -212,9 +212,9 @@ The plot: the degree centrality is demonstrated in the network by the size of th
 
 It is good practice to identify the top 10 vertices with the highest degree centrality as they would be the species that play a vital role wihtin the network forming its structure and influencing stability. Therefore, with this information you can start to research why this might be the case for your chosen ecological interactions.
 
-Creating a data table provides the specifc values that have been visualised in the plot which can then be used to further analyse relationships e.g. statistial tests and models(GLM). 
+Creating a data table provides the specifc values that have been visualised in the plot which can then be used to further analyse relationships e.g. statistical tests and models(GLM). 
 
-Anazing! You are now over halfway through this tutorial. Lets move onto the final section. 
+Amazing! You are now over halfway through this tutorial. Lets move onto the final section. 
 
 <a name="3"></a>
 ### Visualisation
@@ -248,8 +248,8 @@ custom <- plot(foodweb,
 ```
 Creating Interactive graphs 
 
-An interactive graph is a more advanced visualisation and more effective when it comes to larger datasets. Interactive graphs allow you to zoom, pan and focus on specific interactions within a network resulting in locailised interactions being easier to visualise. 
-First we need to download a package that can create and interactive graph with the package igraph 
+An interactive graph is a more advanced visualisation and more effective when it comes to larger datasets. Interactive graphs allow you to zoom, pan and focus on specific interactions within a network resulting in localised interactions being easier to visualise. 
+First we need to download a package that can create an interactive graph with the package igraph 
 ```r
 install.packages("visNetwork") # install new package
 library(visNetwork) # load package
@@ -286,4 +286,4 @@ browseURL("network_graph.html") # open the link in web browser
 ### Interactive Graph
 [View the Interactive Graph](https://eddatascienceees.github.io/tutorial-JessHogg/Graphs/network_graph.html)
 
-Congratulations you have sucessfully completed the tutorial! You now have all the techniques and information you need to start incorporating igraph into your own data science projects. If you would like to ask any questions (e.g. about the exercise) please contact me at s2421495@ed.ac.uk. Goodluck!
+Congratulations you have sucessfully completed the tutorial! You now have all the techniques and information you need to start incorporating igraph into your own data science projects. If you would like to ask any questions (e.g. about the exercise) please contact me at s2421495@ed.ac.uk. Good luck!
